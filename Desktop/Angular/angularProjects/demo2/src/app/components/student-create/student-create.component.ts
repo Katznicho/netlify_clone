@@ -1,6 +1,7 @@
 import { StudentsService } from './../../service/students.service';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup , Validators} from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-create',
@@ -11,7 +12,7 @@ export class StudentCreateComponent implements OnInit {
   formGroup: FormGroup;
   student:{name, email,details}
 
-  constructor(private fb:FormBuilder, private studentService:StudentsService) { }
+  constructor(private fb:FormBuilder, private studentService:StudentsService, private router:Router) { }
 
   ngOnInit() {
    this.formGroup =  this.fb.group({
@@ -24,6 +25,8 @@ export class StudentCreateComponent implements OnInit {
     this.student = this.formGroup.value
     this.formGroup.reset()
     this.studentService.createStudent(this.student)
+    this.router.navigate(['student-list'])
+
   }
 
 }
