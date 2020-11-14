@@ -1,0 +1,26 @@
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding-top: 1rem;
+    justify-content: space-between;
+    height: 3.2rem;
+    z-index: 1;
+}
+.netflix{
+    width: 80px;
+    position: fixed;
+    left: 20px;
+    object-fit: contain;
+
+}
+.avatar{
+    width: 30px;
+    position: fixed;
+    right: 20px;
+    object-fit: contain;
+}
+.nav_black{
+    background-color: #111;
+}
